@@ -1,0 +1,46 @@
+.header{
+    z-index: 10 !important;
+    @apply shadow-md sticky top-0 bg-white w-full left-0 right-0;
+}
+.nav-bar{
+    @apply container mx-auto flex justify-between items-center h-[60px] md:h-[70px];
+}
+.logo{
+    @apply font-playFair font-bold md:text-lg flex items-center gap-3;
+  }
+
+@media screen and (max-width: 500px) {
+    .logo-text{
+        @apply hidden;
+    }
+}
+
+.menu{
+    @apply flex gap-5 lg:gap-7;
+}
+
+@media screen and (max-width:350px) {
+    .menu{
+        @apply gap-3;
+    }
+}
+
+.menu-item{
+    @apply text-sm h-[60px] md:h-[70px];
+}
+
+.menu-item .menu-item-link{
+    @apply h-[60px] md:h-[70px] flex items-center justify-center w-[40px] md:w-[70px];
+}
+
+.menu-item .menu-item-link.active{
+    @apply border-b-[2px] border-blue-500 transition-all duration-100 text-blue-500;
+}
+
+.black-btn{
+    @apply px-7 py-2 text-sm md:text-base bg-gray-800 rounded-full text-white transition-all active:scale-95 duration-200 max-w-[140px];
+}
+
+.ghost-btn{
+    @apply px-7 py-2 rounded-full font-semibold underline;
+}
