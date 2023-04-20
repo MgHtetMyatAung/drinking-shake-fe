@@ -3,7 +3,7 @@
     @apply shadow-md sticky top-0 bg-white w-full left-0 right-0;
 }
 .nav-bar{
-    @apply container mx-auto flex justify-between items-center h-[60px] md:h-[70px];
+    @apply container mx-auto flex justify-between items-center h-[65px] md:h-[70px];
 }
 .logo{
     @apply font-playFair font-bold md:text-lg flex items-center gap-3;
@@ -26,11 +26,11 @@
 }
 
 .menu-item{
-    @apply text-sm h-[60px] md:h-[70px];
+    @apply text-sm h-[65px] md:h-[70px];
 }
 
 .menu-item .menu-item-link{
-    @apply h-[60px] md:h-[70px] flex items-center justify-center w-[40px] md:w-[70px];
+    @apply h-[65px] md:h-[70px] flex items-center justify-center w-[40px] md:w-[70px];
 }
 
 .menu-item .menu-item-link.active{
