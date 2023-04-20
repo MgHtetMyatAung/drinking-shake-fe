@@ -28,12 +28,12 @@ const Home = () => {
             <img
               src={cafeLogo}
               alt="cafe logo"
-              className=" absolute top-[15%] right-[5%] w-[50px] md:w-[70px] z-[-1]"
+              className=" absolute top-[15%] right-[5%] w-[50px] md:w-[70px] z-[-1] animate-bounce"
             />
             <img src={headImg} alt="head img" className="w-full z-0" />
             <div className=" absolute top-[48%] md:top-[55%] md:left-[10%] max-w-[180px] md:max-w-[220px] rounded-lg shadow bg-white p-3 z-[0]">
               <div className=" flex gap-2">
-                <AiFillStar className=" text-[15px] md:text-[20px]" />
+                <AiFillStar className=" text-[15px] md:text-[25px]" />
                 <AiFillStar className=" text-[15px] md:text-[20px]" />
                 <AiFillStar className=" text-[15px] md:text-[20px]" />
                 <AiFillStar className=" text-[15px] md:text-[20px]" />

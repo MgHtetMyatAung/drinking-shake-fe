@@ -7,9 +7,9 @@ const MapCard = ({ item }) => {
       <div className=" grid place-items-center mb-3">
         <TiLocation className=" text-[23px]"/>
       </div>
-      <h3 className=" text-xl font-semibold py-2">{item.title}</h3>
-      <h4 className=" text-xl font-medium pb-2">{item.time}</h4>
-      <p>{item.address}</p>
+      <h3 className=" md:text-xl font-semibold py-2">{item.title}</h3>
+      <h4 className=" md:text-xl font-medium pb-2">{item.time}</h4>
+      <p className=" text-[14px] md:text-base">{item.address}</p>
     </div>
   );
 };

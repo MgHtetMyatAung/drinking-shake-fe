@@ -40,6 +40,7 @@ const Header = () => {
               <NavLink to={"/add-to-card"} className="menu-item-link">
                 <BsFillHandbagFill className=" text-[18px] md:text-[20px]" />
               </NavLink>
+              <span className="animate-ping md:hidden bg-red-500 text-center px-1 min-w-[19px] min-h-[19px] md:px-2 rounded-full text-[9px] md:text-[11px] absolute top-2 right-[-5px] md:right-2"></span>
               <span className=" bg-red-500 text-center text-white px-1 min-w-[19px] md:px-2 rounded-full text-[9px] md:text-[11px] absolute top-2 right-[-5px] md:right-2">
                 20
               </span>
