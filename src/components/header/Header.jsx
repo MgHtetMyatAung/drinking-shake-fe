@@ -25,18 +25,18 @@ const Header = () => {
           <ul className="menu">
             <li className="menu-item">
               <NavLink to={"/"} className="menu-item-link">
-                <AiFillShop className=" text-[20px] md:text-[23px]" />
+                <AiFillShop className=" text-[23px]" />
               </NavLink>
             </li>
             <li className="menu-item">
               <NavLink to={"/find-us"} className="menu-item-link">
-                <FaMapMarkerAlt className=" text-[18px] md:text-[20px]" />
+                <FaMapMarkerAlt className=" text-[20px]" />
               </NavLink>
             </li>
             <li className="menu-item">
               {" "}
               <NavLink to={"/faq"} className="menu-item-link">
-                <MdOutlineQuestionAnswer className=" text-[20px] md:text-[23px]" />
+                <MdOutlineQuestionAnswer className=" text-[23px]" />
               </NavLink>
             </li>
             <li
@@ -44,7 +44,7 @@ const Header = () => {
               onClick={() => navigate("/add-to-card")}
             >
               <NavLink to={"/add-to-card"} className="menu-item-link">
-                <BsFillHandbagFill className=" text-[18px] md:text-[20px]" />
+                <BsFillHandbagFill className=" text-[20px]" />
               </NavLink>
               {cards.length > 0 && (
                 <>
@@ -57,7 +57,7 @@ const Header = () => {
             </li>
             <li className="menu-item md:hidden">
               <NavLink to={"/profile"} className="menu-item-link">
-                <FaUserCircle className=" text-[20px] md:text-[23px]" />
+                <FaUserCircle className=" text-[23px]" />
               </NavLink>
             </li>
           </ul>
