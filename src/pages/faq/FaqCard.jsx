@@ -16,11 +16,11 @@ const FaqCard = ({ data }) => {
         <BsPlus className=" text-[20px] absolute top-5 right-5" />
       )}
 
-      <h2 className="font-medium">{data.title}</h2>
+      <h2 className="font-medium text-[15px]">{data.title}</h2>
       <p
         className={`${
           toggle ? " block" : " hidden"
-        } mt-3 transition-all duration-200 text-gray-500`}
+        } mt-3 transition-all text-sm duration-200 text-gray-500`}
       >
         {data.description}
       </p>
