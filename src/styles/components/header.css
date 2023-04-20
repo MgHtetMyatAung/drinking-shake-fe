@@ -44,3 +44,11 @@
 .ghost-btn{
     @apply px-7 py-2 rounded-full font-semibold underline;
 }
+
+.del-btn{
+    @apply text-white px-3 py-2 text-sm rounded-md bg-red-500 transition-all active:scale-95 duration-200;
+}
+
+.qty-btn{
+    @apply w-[20px] h-[20px] bg-gray-700 grid place-items-center rounded text-white transition-all active:scale-95 duration-200;
+}

@@ -1,23 +1,29 @@
-.bg-yellow{
-    @apply bg-[#E7D54F];
+.bg-yellow {
+  @apply bg-[#E7D54F];
 }
 
-.bg-green{
-    @apply bg-[#93D43C];
+.bg-green {
+  @apply bg-[#93D43C];
 }
 
-.bg-orange{
-    @apply bg-[#F9A473];
+.bg-orange {
+  @apply bg-[#F9A473];
 }
 
-.bg-gray{
-    @apply bg-[#E6E7E8];
+.bg-gray {
+  @apply bg-[#E6E7E8];
 }
 
-.p-head{
-    @apply text-xl md:text-3xl font-playFair text-center font-bold;
+.p-head {
+  @apply text-xl md:text-3xl font-playFair text-center font-bold;
 }
 
-.p-btn{
-    @apply py-1 px-5 bg-white text-black rounded-md text-sm font-medium mt-3 transition-all active:scale-95 duration-150;
+.p-btn {
+  @apply py-1 px-5 bg-white text-black rounded-md text-sm font-medium mt-3 transition-all active:scale-95 duration-150;
+}
+
+@media screen and (max-width: 400px) {
+  .table-head {
+    @apply hidden;
+  }
 }

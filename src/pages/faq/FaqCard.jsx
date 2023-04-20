@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsPlus } from "react-icons/bs";
 import { BiMinus } from "react-icons/bi";
 
 const FaqCard = ({ data }) => {
   const [toggle, settoggle] = useState(false);
+
   return (
     <div
       className=" my-5 p-5 bg-white relative cursor-pointer "

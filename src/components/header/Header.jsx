@@ -1,17 +1,20 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { BsFillHandbagFill } from "react-icons/bs";
 import { MdOutlineQuestionAnswer } from "react-icons/md";
 import { FaMapMarkerAlt, FaUserCircle } from "react-icons/fa";
 import { AiFillShop } from "react-icons/ai";
 import starLogo from "../../assets/logo-star.png";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const cards = useSelector((state) => state.cardList.card);
   return (
     <>
-      <div className="container mx-auto md:hidden flex gap-5 pt-3">
+      <div className="container mx-auto md:hidden flex gap-3 pt-3">
         <img src={starLogo} alt="star-logo" className="" />
-        <span className="logo-text">Discount Shop</span>
+        <span className="logo-text font-bold">Discount Shop</span>
       </div>
       <div className="header">
         <nav className="nav-bar">
@@ -36,14 +39,21 @@ const Header = () => {
                 <MdOutlineQuestionAnswer className=" text-[20px] md:text-[23px]" />
               </NavLink>
             </li>
-            <li className="menu-item relative">
+            <li
+              className="menu-item relative cursor-pointer"
+              onClick={() => navigate("/add-to-card")}
+            >
               <NavLink to={"/add-to-card"} className="menu-item-link">
                 <BsFillHandbagFill className=" text-[18px] md:text-[20px]" />
               </NavLink>
-              <span className="animate-ping md:hidden bg-red-500 text-center px-1 min-w-[19px] min-h-[19px] md:px-2 rounded-full text-[9px] md:text-[11px] absolute top-2 right-[-5px] md:right-2"></span>
-              <span className=" bg-red-500 text-center text-white px-1 min-w-[19px] md:px-2 rounded-full text-[9px] md:text-[11px] absolute top-2 right-[-5px] md:right-2">
-                20
-              </span>
+              {cards.length > 0 && (
+                <>
+                  <span className="animate-ping md:hidden bg-red-500 text-center px-1 min-w-[19px] min-h-[19px] md:px-2 rounded-full text-[9px] md:text-[11px] absolute top-2 right-[-5px] md:right-2"></span>
+                  <span className=" bg-red-500 text-center text-white px-1 min-w-[19px] md:px-2 rounded-full text-[10px] md:text-[12px] absolute top-2 right-[-5px] md:right-2">
+                    {cards.length}
+                  </span>
+                </>
+              )}
             </li>
             <li className="menu-item md:hidden">
               <NavLink to={"/profile"} className="menu-item-link">
