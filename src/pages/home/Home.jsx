@@ -39,7 +39,7 @@ const Home = () => {
                 <AiFillStar className=" text-[15px] md:text-[20px]" />
                 <AiFillStar className=" text-[15px] md:text-[20px]" />
               </div>
-              <p className=" text-gray-500 text-[10px] md:text-sm mt-3">
+              <p className=" text-gray-500 text-[12px] md:text-sm mt-3">
                 4.9 out of 5 Overall Star Rating for All Local Business.
               </p>
             </div>

@@ -7,7 +7,10 @@ export const addToCardSlice = createSlice({
   },
   reducers: {
     addCard: (state, { payload }) => {
-      state.card= [...state.card,payload]
+      const data = { ...payload, qty: 1 };
+      state.card.find((item) => item.id === payload.id)
+        ? (state.card = state.card)
+        : (state.card = [...state.card, data]);
     },
     removeCard: (state, { payload }) => {
       state.card = state.card.filter((item) => item.id !== payload.id);
@@ -15,6 +18,7 @@ export const addToCardSlice = createSlice({
     removeAllCard: (state) => {
       state.card = [];
     },
+    addQty: (state, { payload }) => {},
   },
 });
 
