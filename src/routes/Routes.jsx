@@ -7,6 +7,8 @@ import Faq from "../pages/faq/Faq";
 import Main from "../pages/main/Main";
 import NotFound from "../pages/not-found/NotFound";
 import Profile from "../pages/profile/Profile";
+import Login from "../pages/auth/Login";
+import SignUp from "../pages/auth/SignUp";
 
 const Routes = () => {
   let element = useRoutes([
@@ -37,6 +39,14 @@ const Routes = () => {
         {
           path: "profile",
           element: <Profile />,
+        },
+        {
+          path: "login",
+          element: <Login />,
+        },
+        {
+          path: "sign-up",
+          element: <SignUp />,
         },
       ],
     },

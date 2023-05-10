@@ -3,33 +3,38 @@ import { useDispatch, useSelector } from "react-redux";
 import CardItem from "./CardItem";
 import emptyImg from "../../assets/empty.gif";
 import questionImg from "../../assets/question.gif";
+import loginImg from "../../assets/login.gif";
 import { useNavigate } from "react-router-dom";
-import { removeAllCard } from "../../features/addToCardSlice";
+import Toast from "../../components/toast/Toast";
+import LoginToast from "../../components/toast/LoginToast";
 
 const AddToCard = () => {
   const cards = useSelector((state) => state.cardList.card);
   const [show, setShow] = useState(false);
+  const [display, setDisplay] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const deleteAllItem = () => {
     setShow(true);
   };
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    document.getElementById("qtn-btn-group").addEventListener('click', event => {
-      if (event.target.getAttribute('sure') == 'yes-btn') {
-        dispatch(removeAllCard());
-        setShow(false);
-      } else {
-        setShow(false);
-      }
-    })
-  },[])
+    setTotal(cards?.reduce((pv, cv) => pv + cv.price * cv.qty, 0));
+  }, [cards]);
+
+  const handleCheckout = () => {
+    if (localStorage.getItem("user")){
+    } else {
+      setDisplay(true);
+    }
+  };
+
   return (
     <>
       <div className=" container mx-auto">
         {cards?.length > 0 ? (
-          <div className=" grid grid-cols-1 lg:grid-cols-3 min-h-[60vh]">
+          <div className=" grid grid-cols-1 lg:grid-cols-3 min-h-[60vh] gap-5">
             <div className=" lg:col-span-2 mb-10">
               <table className=" w-full py-5 border-separate border-spacing-y-3">
                 <thead className="table-head">
@@ -50,7 +55,34 @@ const AddToCard = () => {
                 Remove All
               </button>
             </div>
-            <div className=""></div>
+            <div className=" bg-white shadow-lg p-5 mb-5 lg:mb-0">
+              <h3 className=" text-lg font-semibold mb-3 lg:mt-5">
+                Shopping Summary
+              </h3>
+              <table className=" w-full">
+                <tbody>
+                  <tr>
+                    <td>Subtotal </td>
+                    <td className=" text-end">$ {total.toFixed(2)}</td>
+                  </tr>
+                  <tr className=" border-b-2">
+                    <td className="py-3">Estimated Tax </td>
+                    <td className=" text-end">
+                      $ {(total * (5 / 100)).toFixed(2)}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="py-3">Total </td>
+                    <td className=" text-end">
+                      $ {(total + total * 0.05).toFixed(2)}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <button className="checkout-btn" onClick={handleCheckout}>
+                Checkout
+              </button>
+            </div>
           </div>
         ) : (
           <div className=" min-h-[80vh] lg:min-h-[70vh] flex flex-col justify-center items-center">
@@ -62,16 +94,13 @@ const AddToCard = () => {
           </div>
         )}
       </div>
-      <div className={`${!show && 'hidden'} fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center bg-[#333333af] z-50`}>
-        <div className=" py-5 px-7 bg-white rounded-lg">
-          <img src={questionImg} alt="" className=" h-[100px] mx-auto"/>
-          <p>Are you sure to delete all ?</p>
-          <div className="flex justify-center gap-5 mt-5" id="qtn-btn-group">
-            <button className=" py-2 px-5 bg-green-600 rounded-md text-white text-sm" sure="yes-btn">Yes</button>
-            <button className=" py-2 px-5 bg-red-600 rounded-md text-white text-sm" sure="no-btn">No</button>
-          </div>
-        </div>
-      </div>
+      <Toast
+        show={show}
+        setShow={setShow}
+        img={questionImg}
+        dispatch={dispatch}
+      />
+      <LoginToast show={display} setShow={setDisplay} img={loginImg} />
     </>
   );
 };

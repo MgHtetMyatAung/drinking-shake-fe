@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, Navigate, useNavigate } from "react-router-dom";
 import { BsFillHandbagFill } from "react-icons/bs";
 import { MdOutlineQuestionAnswer } from "react-icons/md";
 import { FaMapMarkerAlt, FaUserCircle } from "react-icons/fa";
@@ -61,7 +61,7 @@ const Header = () => {
               </NavLink>
             </li>
           </ul>
-          <button className="black-btn hidden md:block">Account</button>
+          <button className="black-btn hidden md:block" onClick={()=>navigate('/login')}>Login</button>
         </nav>
       </div>
     </>

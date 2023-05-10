@@ -18,9 +18,19 @@ export const addToCardSlice = createSlice({
     removeAllCard: (state) => {
       state.card = [];
     },
-    addQty: (state, { payload }) => {},
+    addQty: (state, { payload }) => {
+      state.card = state.card.map((item) =>
+        item.id === payload.id ? { ...item, qty: item.qty + 1 } : item
+      );
+    },
+    decreaseQty: (state, { payload }) => {
+      state.card = state.card.map((item) =>
+        item.id === payload.id ? { ...item, qty: item.qty - 1 } : item
+      );
+    },
   },
 });
 
-export const { addCard, removeAllCard, removeCard } = addToCardSlice.actions;
+export const { addCard, removeAllCard, removeCard, addQty,decreaseQty } =
+  addToCardSlice.actions;
 export default addToCardSlice.reducer;
