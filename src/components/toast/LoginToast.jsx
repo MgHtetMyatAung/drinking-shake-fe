@@ -20,7 +20,7 @@ const LoginToast = ({ show, setShow, img }) => {
     <div
       className={`${
         !show && "hidden"
-      } fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center bg-[#333333af] z-50`}
+      } fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center bg-[#333333af] toast-container`}
     >
       <div className=" py-5 px-7 bg-white rounded-lg">
         <img src={img} alt="" className=" h-[50px] mx-auto mb-3" />

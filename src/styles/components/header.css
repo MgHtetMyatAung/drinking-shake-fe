@@ -2,6 +2,11 @@
     z-index: 10 !important;
     @apply shadow-md sticky top-0 bg-white w-full left-0 right-0;
 }
+
+.mb_logo{
+    z-index: 1000 !important;
+}
+
 .nav-bar{
     @apply container mx-auto flex justify-between items-center h-[55px] md:h-[70px];
 }

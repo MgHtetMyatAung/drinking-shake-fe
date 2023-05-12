@@ -17,6 +17,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [showEye, setShowEye] = useState(false);
   const user = JSON.parse(localStorage.getItem("user"));
+  const [error, setError] = useState("");
 
   const formik = useFormik({
     initialValues: {
@@ -26,8 +27,10 @@ const Login = () => {
     validationSchema: loginSchema,
     onSubmit: (values) => {
       if (user?.email === values.email && user?.password === values.password) {
+        localStorage.setItem('login_data', JSON.stringify(values));
         navigate("/");
       } else {
+        setError("Something wrong please check your data !");
       }
     },
   });
@@ -118,6 +121,7 @@ const Login = () => {
                   {formik.errors.password}
                 </div>
               ) : null}
+              {error && <div className=" text-red-500 text-sm">{error}</div>}
             </div>
           </div>
 

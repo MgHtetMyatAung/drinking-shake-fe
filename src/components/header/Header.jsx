@@ -12,9 +12,11 @@ const Header = () => {
   const cards = useSelector((state) => state.cardList.card);
   return (
     <>
-      <div className="container mx-auto md:hidden flex gap-3 pt-3">
-        <img src={starLogo} alt="star-logo" className="" />
-        <span className="logo-text font-bold">Discount Shop</span>
+      <div className="mb_logo bg-white">
+        <div className="container mx-auto md:hidden flex gap-3 pt-3">
+          <img src={starLogo} alt="star-logo" className="" />
+          <span className="logo-text font-bold">Discount Shop</span>
+        </div>
       </div>
       <div className="header">
         <nav className="nav-bar">
@@ -61,7 +63,12 @@ const Header = () => {
               </NavLink>
             </li>
           </ul>
-          <button className="black-btn hidden md:block" onClick={()=>navigate('/login')}>Login</button>
+          <button
+            className="black-btn hidden md:block"
+            onClick={() => navigate("/login")}
+          >
+            Login
+          </button>
         </nav>
       </div>
     </>

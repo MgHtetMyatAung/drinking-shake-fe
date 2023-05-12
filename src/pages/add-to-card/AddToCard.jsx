@@ -31,8 +31,8 @@ const AddToCard = () => {
   };
 
   return (
-    <div className="animate__animated animate__fadeIn">
-      <div className=" container mx-auto">
+    <>
+      <div className=" container mx-auto animate__animated animate__fadeIn">
         {cards?.length > 0 ? (
           <div className=" grid grid-cols-1 lg:grid-cols-3 min-h-[60vh] gap-5">
             <div className=" lg:col-span-2 mb-10">
@@ -101,7 +101,7 @@ const AddToCard = () => {
         dispatch={dispatch}
       />
       <LoginToast show={display} setShow={setDisplay} img={loginImg} />
-    </div>
+    </>
   );
 };
 
