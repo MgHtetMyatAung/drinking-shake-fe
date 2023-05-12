@@ -1,39 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Routes from "./routes/Routes";
-import Home from "./pages/home/Home";
-import FindUs from "./pages/Find-us/FindUs";
-import Faq from "./pages/faq/Faq";
-import AddToCard from "./pages/add-to-card/AddToCard";
-import Profile from "./pages/profile/Profile";
 import { useNavigate } from "react-router-dom";
-
-const sliderRoute = [
-  {
-    id: 1,
-    path: "/",
-    component: <Home className={"container animate__animated animate__fadeIn"} />,
-  },
-  {
-    id: 2,
-    path: "/find-us",
-    component: <FindUs className={"container animate__animated animate__fadeIn"} />,
-  },
-  {
-    id: 3,
-    path: "/faq",
-    component: <Faq className={"container animate__animated animate__fadeIn"} />,
-  },
-  {
-    id: 4,
-    path: "/add-to-card",
-    component: <AddToCard className={"container animate__animated animate__fadeIn"} />,
-  },
-  {
-    id: 5,
-    path: "/profile",
-    component: <Profile className={"container animate__animated animate__fadeIn"} />,
-  },
-];
+import { mobileSliderRoute, tabletSliderRoute } from "./routes/sliderRoutes";
 
 const App = () => {
   const [position, setPosition] = useState(0);
@@ -53,14 +21,26 @@ const App = () => {
 
   const handleTouchEnd = () => {
     const screenWidth = window.innerWidth;
-    const threshold = screenWidth / 5;
+    if (screenWidth < 650) {
+      const threshold = screenWidth / 5;
 
-    if (currentX < -threshold && position < sliderRoute.length - 1) {
-      setPosition((prevPosition) => prevPosition + 1);
-      navigate(sliderRoute[position + 1].path);
-    } else if (currentX > threshold && position > 0) {
-      setPosition((prevPosition) => prevPosition - 1);
-      navigate(sliderRoute[position - 1].path);
+      if (currentX < -threshold && position < mobileSliderRoute.length - 1) {
+        setPosition((prevPosition) => prevPosition + 1);
+        navigate(mobileSliderRoute[position + 1].path);
+      } else if (currentX > threshold && position > 0) {
+        setPosition((prevPosition) => prevPosition - 1);
+        navigate(mobileSliderRoute[position - 1].path);
+      }
+    } else {
+      const threshold = screenWidth / 5;
+
+      if (currentX < -threshold && position < tabletSliderRoute.length - 1) {
+        setPosition((prevPosition) => prevPosition + 1);
+        navigate(tabletSliderRoute[position + 1].path);
+      } else if (currentX > threshold && position > 0) {
+        setPosition((prevPosition) => prevPosition - 1);
+        navigate(tabletSliderRoute[position - 1].path);
+      }
     }
   };
 
@@ -76,6 +56,7 @@ const App = () => {
       sliderElement.removeEventListener("touchend", handleTouchEnd);
     };
   }, [handleTouchStart, handleTouchMove, handleTouchEnd]);
+
   return (
     <div className="" ref={sliderRef}>
       <Routes />
