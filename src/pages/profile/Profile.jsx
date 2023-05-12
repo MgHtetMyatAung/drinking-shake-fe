@@ -43,7 +43,7 @@ const Profile = () => {
               localStorage.removeItem("login_data");
               window.location.reload();
             }}
-            className="w-[50%] block mx-auto py-2 bg-[#333] text-white mt-5 transition-all active:scale-95 duration-200 rounded-full"
+            className="w-[50%] md:w-fit px-10 block mx-auto py-2 bg-[#333] text-white mt-5 transition-all active:scale-95 duration-200 rounded-full"
           >
             Logout
           </button>
