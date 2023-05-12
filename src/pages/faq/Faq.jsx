@@ -69,7 +69,7 @@ const otherDatas = [
 
 const Faq = () => {
   return (
-    <div className=" container mx-auto bg-gray py-10">
+    <div className=" container mx-auto bg-gray py-10 animate__animated animate__fadeIn">
       <h1 className=" text-2xl md:text-4xl font-bold text-center my-5 md:my-10">
         Frequently Asked Questions
       </h1>

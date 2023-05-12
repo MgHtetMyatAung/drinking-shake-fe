@@ -8,7 +8,7 @@ import Discount from "./Discount";
 
 const Home = () => {
   return (
-    <>
+    <div className="animate__animated animate__fadeIn">
       <div className="home">
         <div className="flex flex-col-reverse lg:flex-row">
           <div className=" lg:w-1/2 home-left">
@@ -49,7 +49,7 @@ const Home = () => {
       <Product />
       <New />
       <Discount/>
-    </>
+    </div>
   );
 };
 

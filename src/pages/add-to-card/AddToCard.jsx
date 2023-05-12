@@ -24,14 +24,14 @@ const AddToCard = () => {
   }, [cards]);
 
   const handleCheckout = () => {
-    if (localStorage.getItem("user")){
+    if (localStorage.getItem("user")) {
     } else {
       setDisplay(true);
     }
   };
 
   return (
-    <>
+    <div className="animate__animated animate__fadeIn">
       <div className=" container mx-auto">
         {cards?.length > 0 ? (
           <div className=" grid grid-cols-1 lg:grid-cols-3 min-h-[60vh] gap-5">
@@ -101,7 +101,7 @@ const AddToCard = () => {
         dispatch={dispatch}
       />
       <LoginToast show={display} setShow={setDisplay} img={loginImg} />
-    </>
+    </div>
   );
 };
 
