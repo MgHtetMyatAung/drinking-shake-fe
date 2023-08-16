@@ -1,5 +1,6 @@
 import FindUs from "../pages/Find-us/FindUs";
 import AddToCard from "../pages/add-to-card/AddToCard";
+import Blog from "../pages/blog/Blog";
 import Faq from "../pages/faq/Faq";
 import Home from "../pages/home/Home";
 import Profile from "../pages/profile/Profile";
@@ -59,9 +60,9 @@ export const tabletSliderRoute = [
     },
     {
       id: 3,
-      path: "/faq",
+      path: "/blog",
       component: (
-        <Faq />
+        <Blog />
       ),
     },
     {
