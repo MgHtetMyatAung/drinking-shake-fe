@@ -20,12 +20,12 @@ const data = [
 const New = () => {
   return (
     <div className=" container mx-auto py-10">
-      <h3 className="p-head mb-12 mt-20">
+      <h3 className="p-head mb-12">
         Latest News from <span className=" text-orange">Discount Shop</span>
       </h3>
       <div className=" grid grid-cols-1">
         {data.map((item) => (
-          <NewCard key={item.id} item={item}/>
+          <NewCard key={item.id} item={item} />
         ))}
       </div>
     </div>

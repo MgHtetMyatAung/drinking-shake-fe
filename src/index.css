@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
-@import url('../src/styles/components/index.css');
-@import url('../src/styles/pages/index.css');
-@import url('./styles/toast.css');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("../src/styles/components/index.css");
+@import url("../src/styles/pages/index.css");
+@import url("./styles/toast.css");
+@import url("../node_modules/swiper/swiper-bundle.min.css");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,18 +17,25 @@
   scroll-behavior: smooth;
 }
 
-
-@layer base{
-  html{
-    font-family: 'Roboto', sans-serif;
+@layer base {
+  html {
+    font-family: "Roboto", sans-serif;
   }
 }
 
-@layer utilities{
-  .font-playFair{
-   font-family: 'Playfair Display', serif;
+@layer utilities {
+  .font-playFair {
+    font-family: "Playfair Display", serif;
   }
-  .text-orange{
-    color: #FF8A49;
+  .text-orange {
+    color: #ff8a49;
   }
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #000; /* Button text color */
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 700;
 }

@@ -3,9 +3,9 @@ import oImg from "../../assets/o-img.png";
 import gImg from "../../assets/g-img.png";
 import yImg from "../../assets/y-img.png";
 import sunkitImg from "../../assets/sunkit-img.png";
-import firedImg from "../../assets/fired-img.png"
-import carabaoImg from "../../assets/carabao-img.png"
-import booImg from "../../assets/boo-img.png"
+import firedImg from "../../assets/fired-img.png";
+import carabaoImg from "../../assets/carabao-img.png";
+import booImg from "../../assets/boo-img.png";
 import lemonImg from "../../assets/lemon-img.png";
 import magiImg from "../../assets/magi-img.png";
 import maxImg from "../../assets/max-img.png";
@@ -60,7 +60,7 @@ const data = [
     id: 7,
     title: "Peach Iced Tea",
     price: 39,
-    image: hypeImg, 
+    image: hypeImg,
     class: "bg-yellow",
   },
   {
@@ -78,17 +78,14 @@ const data = [
     class: "bg-orange",
   },
 ];
-const Product = () => {
+const Product = ({ title }) => {
   return (
-    <div className=" container mx-auto">
-      <h3 className="p-head mb-12">Feature Product</h3>
+    <div className=" container mx-auto mb-[60px]">
+      <h3 className="p-head mb-12">{title}</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-20">
         {data.map((item) => (
           <ProductCard key={item.id} item={item} />
         ))}
-      </div>
-      <div className="text-center md:mt-10">
-        <button className=" black-btn">See More</button>
       </div>
     </div>
   );

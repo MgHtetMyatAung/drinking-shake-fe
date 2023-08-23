@@ -1,13 +1,13 @@
 .bg-yellow {
-  @apply bg-[#E7D54F];
+  @apply bg-[#dbcd68];
 }
 
 .bg-green {
-  @apply bg-[#93D43C];
+  @apply bg-[#a1d360];
 }
 
 .bg-orange {
-  @apply bg-[#F9A473];
+  @apply bg-[#df9f7b];
 }
 
 .bg-gray {

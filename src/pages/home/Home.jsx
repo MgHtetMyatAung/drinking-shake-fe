@@ -5,6 +5,8 @@ import cafeLogo from "../../assets/cafe-logo.png";
 import Product from "./Product";
 import New from "./New";
 import Discount from "./Discount";
+import BrandLogo from "./BrandLogo";
+import Banner from "./Banner";
 
 const Home = () => {
   return (
@@ -46,9 +48,13 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Product />
+      <BrandLogo />
+      <Product title={"New Arrival"} />
+      <Banner />
+      <Product title={"Feature Products"} />
+      <Product title={"Popular Products"} />
       <New />
-      <Discount/>
+      <Discount />
     </div>
   );
 };

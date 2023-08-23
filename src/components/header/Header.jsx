@@ -37,7 +37,7 @@ const Header = () => {
             </li>
             <li className="menu-item">
               {" "}
-              <NavLink to={"/faq"} className="menu-item-link">
+              <NavLink to={"/blog"} className="menu-item-link">
                 <MdOutlineQuestionAnswer className=" text-[23px]" />
               </NavLink>
             </li>

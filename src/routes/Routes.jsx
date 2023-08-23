@@ -9,7 +9,8 @@ import NotFound from "../pages/not-found/NotFound";
 import Profile from "../pages/profile/Profile";
 import Login from "../pages/auth/Login";
 import SignUp from "../pages/auth/SignUp";
-
+import Blog from "../pages/blog/Blog";
+import CheckOut from "../pages/checkout/CheckOut";
 const Routes = () => {
   let element = useRoutes([
     {
@@ -33,12 +34,16 @@ const Routes = () => {
           element: <FindUs />,
         },
         {
-          path: "faq",
-          element: <Faq />,
+          path: "blog",
+          element: <Blog />,
         },
         {
           path: "profile",
           element: <Profile />,
+        },
+        {
+          path: "check-out",
+          element: <CheckOut />,
         },
         {
           path: "login",

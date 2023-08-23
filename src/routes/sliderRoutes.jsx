@@ -1,5 +1,7 @@
 import FindUs from "../pages/Find-us/FindUs";
 import AddToCard from "../pages/add-to-card/AddToCard";
+import Blog from "../pages/blog/Blog";
+import CheckOut from "../pages/checkout/CheckOut";
 import Faq from "../pages/faq/Faq";
 import Home from "../pages/home/Home";
 import Profile from "../pages/profile/Profile";
@@ -39,6 +41,15 @@ export const mobileSliderRoute = [
       component: (
         <Profile />
       ),
+      
+    },
+    {
+      id: 6,
+      path: "/check-out",
+      component: (
+        <CheckOut />
+      ),
+      
     },
 ];
   
@@ -59,9 +70,9 @@ export const tabletSliderRoute = [
     },
     {
       id: 3,
-      path: "/faq",
+      path: "/blog",
       component: (
-        <Faq />
+        <Blog />
       ),
     },
     {

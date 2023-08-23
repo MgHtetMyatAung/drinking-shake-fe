@@ -4,7 +4,7 @@ import CardItem from "./CardItem";
 import emptyImg from "../../assets/empty.gif";
 import questionImg from "../../assets/question.gif";
 import loginImg from "../../assets/login.gif";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Toast from "../../components/toast/Toast";
 import LoginToast from "../../components/toast/LoginToast";
 
@@ -79,9 +79,11 @@ const AddToCard = () => {
                   </tr>
                 </tbody>
               </table>
-              <button className="checkout-btn" onClick={handleCheckout}>
+              <Link to="/check-out">
+              <button className="checkout-btn" onClick={handleCheckout} >
                 Checkout
               </button>
+              </Link>
             </div>
           </div>
         ) : (
