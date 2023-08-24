@@ -1,5 +1,5 @@
 .home {
-  @apply container mx-auto min-h-[80vh];
+  @apply container mx-auto md:min-h-[80vh];
 }
 
 .home-left,

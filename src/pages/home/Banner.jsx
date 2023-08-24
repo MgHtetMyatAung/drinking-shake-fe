@@ -4,6 +4,7 @@ import Banner1 from "../../assets/banner1.jpg";
 import Banner2 from "../../assets/banner2.jpg";
 import Banner3 from "../../assets/banner3.jpg";
 import Banner4 from "../../assets/banner4.jpg";
+import Banner5 from "../../assets/banner5.jpg";
 
 import { HiOutlineChevronRight } from "react-icons/hi";
 import { FaAngleLeft } from "react-icons/fa";
@@ -16,8 +17,8 @@ const banners = [
     image: Banner1,
   },
   {
-    id: 2,
-    image: Banner2,
+    id: 5,
+    image: Banner5,
   },
   {
     id: 3,
@@ -26,6 +27,22 @@ const banners = [
   {
     id: 4,
     image: Banner4,
+  },
+  {
+    id: 2,
+    image: Banner2,
+  },
+  {
+    id: 6,
+    image: Banner3,
+  },
+  {
+    id: 7,
+    image: Banner4,
+  },
+  {
+    id: 8,
+    image: Banner2,
   },
 ];
 
@@ -48,18 +65,18 @@ const Banner = () => {
             spaceBetween: 10,
           },
           768: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 20,
           },
           1024: {
-            slidesPerView: 3,
+            slidesPerView: 2,
             spaceBetween: 30,
           },
         }}
       >
         {banners.map((banner) => (
           <SwiperSlide key={banner.id}>
-            <img src={banner.image} alt="" />
+            <img src={banner.image} alt="" className=" w-full" />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -7,6 +7,7 @@ import New from "./New";
 import Discount from "./Discount";
 import BrandLogo from "./BrandLogo";
 import Banner from "./Banner";
+import { alcoholDatas, featureDatas, newDatas } from "./data/data";
 
 const Home = () => {
   return (
@@ -49,10 +50,10 @@ const Home = () => {
         </div>
       </div>
       <BrandLogo />
-      <Product title={"New Arrival"} />
+      <Product title={"New Arrival"} data={newDatas} />
       <Banner />
-      <Product title={"Feature Products"} />
-      <Product title={"Popular Products"} />
+      <Product title={"Feature Products"} data={featureDatas} />
+      <Product title={"Popular Products"} data={alcoholDatas} />
       <New />
       <Discount />
     </div>
